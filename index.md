@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Index
-	---
+---
 {% include JB/setup %}
 
 # Intro
