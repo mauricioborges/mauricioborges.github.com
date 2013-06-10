@@ -56,4 +56,10 @@ Eu até hoje não sei o que fazer, nem por onde começar. Tentei os seguintes ca
 1. ler artigos mil
 1. fugir da raia e voltar para o desenvolvimento (em processo, ou não)
 
-Meu plano é não fugir da raia: mas trabalhar com desenvolvimento/GC é tão mais natural e simples, que eu me pego fazendo isso sem querer.
+Meu plano é não fugir da raia: mas trabalhar com desenvolvimento/GC é tão mais natural e simples, que eu me pego fazendo isso sem querer. Comecei anunciando que cortei os laços com GC e DEV.
+
+### Abstraindo...
+
+Tento abstrair o que fazer em dois campos:
+* o que o cliente quer? (o que ele precisa, e porque?)
+* como o cliente quer? (bonito? rápido? responsivo?)
