@@ -3,7 +3,7 @@ layout: post
 title: "Afinal, como funcionam os snapshots do Maven?"
 description: ""
 category: 
-tags: [maven, scm]
+tags: [maven, cm]
 ---
 {% include JB/setup %}
 
