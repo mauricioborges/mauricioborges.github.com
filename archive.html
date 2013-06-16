@@ -5,4 +5,6 @@ header : Post Archive
 group: navigation
 ---
 {% include JB/setup %}
-TODO: replace by non_draft posts
+
+{% assign posts_collate = site.posts %}
+{% include JB/posts_collate %}

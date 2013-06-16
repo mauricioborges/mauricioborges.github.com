@@ -1,14 +1,17 @@
 ---
 layout: page
-title: mauricioborges.github.com
+title: mauricioborges.github.io
 ---
 {% include JB/setup %}
 
-# Intro
+That's my website here at github. Enjoy it. I promisse it'll be pretty someday.
 
-TODO
+# TODO
 
-# Meus posts
+* improve site to multilang support
+* create template for qa, cm and dev pages
+
+# My posts
 
 <ul class="posts">
   {% for post in site.posts %}
