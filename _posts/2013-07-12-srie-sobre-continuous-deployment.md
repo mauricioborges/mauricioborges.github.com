@@ -4,6 +4,7 @@ title: "Series about Continuous Deployment"
 description: ""
 category: 
 draft: true
+comments: true
 tags: [continuous deployment]
 ---
 {% include JB/setup %}
