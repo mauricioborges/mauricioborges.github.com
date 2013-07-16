@@ -46,6 +46,7 @@ Ok, maybe it makes more sense in my head than in words, I'll review this post la
 # Next
 
 * open data in Brazil
+* build pipeline with gradle
 
 # TODO
 
