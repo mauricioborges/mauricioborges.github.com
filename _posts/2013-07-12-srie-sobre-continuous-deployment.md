@@ -3,7 +3,6 @@ layout: post
 title: "Series about Continuous Deployment"
 description: ""
 category: 
-draft: true
 comments: true
 tags: [continuous deployment]
 ---
@@ -44,10 +43,13 @@ Except for these requirements, I'll force myself on using opensource always. Als
 
 Ok, maybe it makes more sense in my head than in words, I'll review this post later.
 
-# TODO:
+# Next
+
+* open data in Brazil
+
+# TODO
 
 * plate juggling image
 * dummy data image
 * continuous delivery book image
 * create a disqus account
-* write a post about open data in brazil and some tests on it
