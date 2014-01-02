@@ -1,0 +1,60 @@
+---
+layout: post
+title: "Chiliproject: migrating from Oracle to MySQL"
+description: ""
+category: 
+comments: true
+tags: ['migration','chiliproject','redmine','oracle','mysql']
+---
+{% include JB/setup %}
+
+I decided to migrate back from Chiliproject to Redmine. At the time I decided for Chiliproject (1,5 years ago) I was kind of newbie in open source (more than today :)), so I made the decision based only in rumours about the project organization (for Redmine) and I checked that Chiliproject was kind of "crowded" and moving fast. Now I realized that, due some constraints at the company I've been working for, the Redmine status and available plugins are better for a more serious Project Management implementation. Ok, too much intro, let's go to the nice part...
+
+I need to migrate from the original chiliproject to a new one. I have the following statements:
+* Chiliproject i
+
+# Chiliproject:
+
+ChiliProject 3.3.0.080c5b63c (OracleEnhanced)
+
+Bitnami rubystack-3.2.5-0
+
+LSB Version:    :core-3.1-amd64:core-3.1-ia32:core-3.1-noarch:graphics-3.1-amd64                                                                                                 :graphics-3.1-ia32:graphics-3.1-noarch
+Distributor ID: EnterpriseEnterpriseServer
+Description:    Enterprise Linux Enterprise Linux Server release 5.5 (Carthage)
+Release:        5.5
+Codename:       Carthage
+
+# Database:
+
+lsb_release -a
+LSB Version:    :core-4.0-amd64:core-4.0-noarch:graphics-4.0-amd64:graphics-4.0-noarch:printing-4.0-amd64:printing-4.0-noarch
+Distributor ID: CentOS
+Description:    CentOS release 6.3 (Final)
+Release:        6.3
+Codename:       Final
+
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+PL/SQL Release 11.2.0.2.0 - Production
+"CORE   11.2.0.2.0      Production"
+TNS for Linux: Version 11.2.0.2.0 - Production
+NLSRTL Version 11.2.0.2.0 - Production
+
+Backup made as http://www.oracle-base.com/articles/10g/oracle-data-pump-10g.php
+Chiliproject    chiliproject@//10.3.25.184:1527/xe
+
+
+
+
+
+
+
+
+
+
+
+
+
+install vagrant box https://dl.dropbox.com/u/7225008/Vagrant/CentOS-6.3-x86_64-minimal.box
+
+
