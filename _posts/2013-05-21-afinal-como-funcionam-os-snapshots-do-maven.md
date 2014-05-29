@@ -15,8 +15,8 @@ O Maven utiliza o indicador de versão de&nbsp;[SNAPSHOT](http://books.sonatype.
 {% highlight xml%}
 (...)
 <dependency>
-    <groupId>br.com.getnet.portais.commons.mango-cadastro</groupId>
-    <artifactId>mango-cadastro</artifactId>
+    <groupId>io.github.mauricioborges</groupId>
+    <artifactId>alguma-lib</artifactId>
     <version>1.0-SNAPSHOT</version>
 </dependency>
 (...)
@@ -34,7 +34,7 @@ Considere os dois excertos de POM abaixo:
 * Uma API específica:
 {% highlight xml%}
 <project>
-	<groupId>br.com.getnet</groupId>
+	<groupId>io.github.mauricioborges</groupId>
 	<artifactId>dependencia</artifactId>
 	<version>1.0-SNAPSHOT</version>
 </project>
@@ -43,12 +43,12 @@ Considere os dois excertos de POM abaixo:
 * Um projeto que a utiliza:
 {% highlight xml%}
 <project>
-	<groupId>br.com.getnet</groupId>
+	<groupId>io.github.mauricioborges</groupId>
 	<artifactId>projeto</artifactId>
 	<version>1.0-SNAPSHOT</version>
     <dependencies>
         <dependency>
-			<groupId>br.com.getnet</groupId>
+			<groupId>io.github.mauricioborges</groupId>
 			<artifactId>dependencia</artifactId>
 			<version>1.0-SNAPSHOT</version>
         </dependency>
