@@ -5,7 +5,7 @@
 
 ## Posts:
 
-* [2019-9-22: an approach on defining a testing strategy when entering a new project](_posts/2019-9-22-defining_test_strategy.html)
+* [2019-9-22: an approach on defining a testing strategy when entering a new project](posts/2019-9-22-defining_test_strategy.md)
 
 ## Disclaimer:
 
