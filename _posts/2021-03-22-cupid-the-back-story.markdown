@@ -56,6 +56,47 @@ Nowadays, the equivalent advice if you need code to do something else is: Change
 
 In this case I railed against the “Cruft Accretion Principle”. Code is not an “asset” to be carefully shrink-wrapped and preserved, but a cost, a debt. All code is cost. So if I can take a big pile of existing cost and replace it with a smaller more specific cost, then I’m winning at code! *Write simple code* that is easy to change, and you have code that is both open and closed, however you need it.
 
+### Liskov Substitution Principle
+
+This is just the [Principle of Least Surprise](https://en.wikipedia.org/wiki/Principle_of_least_astonishment) applied to code substitution, and as such is pretty sensible. If I tell you something is a valid subtype of the thing you have, then you should be able to assume it will act the same in any sense that you care about.
+
+However, the language LSP uses of “subtypes”, coupled with the way most developers conflate subtypes with subclasses, and the vagaries of "desirable properties", means that it tends to evoke the class-based inheritance language of *"is-a"* and *"has-a"*, and its corresponding 1980s entity modelling.
+
+In the spirit of using a butter knife as a screwdriver, many objects can *"act-like-a"* or *"sometimes-be-used-as-a"* or *"pass-off-as-a-if-you-squint"*. In this context what we really want is small, simple types that we can compose into whatever more complex structures we need, and to make our peace with all the nuances that go along with that. My advice, *quelle surprise*, is to "write simple code" that is easy to reason about.
+
+### Interface Segregation Principle
+
+This really is fish-in-a-barrel as principles go. For some reason, this one caused the most controversy, but to me it is the easiest to debunk. While [researching](https://en.wikipedia.org/wiki/Interface_segregation_principle) this talk I discovered that this pattern came about when Robert C. Martin was wrangling a [God object](https://en.wikipedia.org/wiki/God_object) in the middle of some printing software at Xerox. Everything was happening in a class called Job. His approach to simplifying it was to find each place where it was used, figure out which methods "went together" and put those in an intermediate interface. This had several immediate benefits:
+
+* Collecting related methods into different interfaces showed all the different responsibilities the `Job` class was performing.
+* Giving each interface an intention-revealing name made the code easier to reason about than just passing a Job object around.
+* It created the option to break the `Job` class out into smaller classes fronted by each interface. (Arguably they didn’t need the interface any more now.)
+
+All of this makes sense, it's just that it isn't a principle, it is a pattern. A principle is something that is generally good advice in any context: Seek first to understand, then to be understood; Be excellent to each other.
+
+A pattern is a strategy that works in a given context (God class) that has benefits (smaller components) and trade-offs (more separate things to manage). The principle would have been about not getting into that mess in the first place!
+
+Thus I argued that if this were a principle at all, it was the "Stable Door Principle". If you had small, role-based classes in the first place, you wouldn’t be in the position of trying to decompose a huge, tangled mess.
+
+Sure, we may find ourselves in that context from time to time, and when we do, interface segregation is a perfectly cromulent strategy for slicing your way towards sanity, along with building a suite of [characterisation tests](https://michaelfeathers.silvrback.com/characterization-testing) and all of the other advice in Mike Feathers’ brilliant [Working Effectively With Legacy Code](https://www.pearson.com/us/higher-education/program/Feathers-Working-Effectively-with-Legacy-Code/PGM254740.html).
+
+### Dependency Inversion Principle
+
+While there is nothing fundamentally wrong with DIP, I don’t think it is an overstatement to say that our obsession with dependency inversion has single-handedly caused billions of dollars in irretrievable sunk cost and waste over the last couple of decades.
+
+The real principle here is option inversion. A dependency is only interesting when there might be multiple ways of providing it, and you only need to invert the relationship when you believe the wiring is important enough to become a separate concern. That’s quite a high bar, and mostly all you ever need is a `main` method.
+
+If instead you subscribe to the idea that all dependencies should be inverted all the time, you end up with J2EE, OSGi, Spring, or any other "declarative assembly" framework where the structuring of the components is itself a twisty maze of config. J2EE deserves a special mention for deciding that each type of dependency inversion – EJBs, servlets, web domains, remote service location, even the configuration configuration – should be owned by different roles.
+
+In the wild, there are entire shadow codebases where each class is backed by exactly one interface, which only exists to satisfy a wiring framework or to inject a mock or stub for automated testing theatre. The promise of "you can just swap out the database" evaporates as soon as you try to, well, swap out the database.
+
+Most dependencies don’t need inverting, because most dependencies aren’t options, they are just the way we are going to do it this time. So my – by now entirely unsurprising – suggestion is to *write simple code*, by focusing on use rather than reuse.
+
+## "If you don’t like them, I have others"
+
+When I look at SOLID, I see a mix of things that were once good advice, patterns that apply in a context, and advice that is easy to misapply. I wouldn’t offer any of it as context-free advice to new programmers. So what would I do instead? I thought there might be a one-to-one correspondence for each of the SOLID principles and patterns, since there is nothing inherently bad or wrong with any of them, but as the saying goes, “If I were going to Dublin, I wouldn’t start from here.”
+
+So, given what I have learned about software development over the last 30 years, are there any principles that I would offer instead? And could they form a pithy acronym? The answer is in yes, and I will outline them in the next article.
 
 
 \* Tradução do post publicado em 16 de março de 2021 no blog do Dan North com o título ["CUPID - THE BACK STORY"](https://dannorth.net/2021/03/16/cupid-the-back-story/)
