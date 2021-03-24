@@ -6,7 +6,7 @@ categories: dan north CUPID SOLID
 ---
 Há alguns dias li este [artigo do Dan North](https://dannorth.net/2021/03/16/cupid-the-back-story/) no qual ele contextualiza o porquê de ele [ainda não concordar](https://twitter.com/tastapod/status/1371962740265324544?s=20) com [SOLID](https://pt.wikipedia.org/wiki/SOLID). Gostei bastante do post e gostaria que mais pessoas tivessem acesso ao mesmo então pedi autorização dele para traduzir o mesmo. A tradução está abaixo, caso você identifique algum problema, por favor entre em contato comigo :):
 
-
+O artigo faz referência a alguns links. Alterei estas referências apenas quando havia um artigo *igual* em português, como por exemplo páginas da Wikipédia ou páginas de livros.
 
 # CUPID - a história de fundo!*
 
@@ -18,21 +18,19 @@ Este artigo não é sobre estes princípios, este vai ser um próximo post. Este
 
 ## Why every single element of SOLID is wrong
 
-[PubConf](https://pubconf.io/) was invented as a kind of afterparty to the NDC conferences. As the name suggests, it takes place in a pub. Several speakers give an Ignite-style talk – 20 slides, 15 seconds per slide, auto-advancing – and the audience roars, stamps, claps and thunders its approval accordingly. The winner gets something and everyone has a great time.
+A conferência [PubConf](https://pubconf.io/) foi inventada como uma espécie de *pós-balada* para as conferências [NDC](https://ndcconferences.com/). Como o nome sugere, a PubConf acontece num bar (do inglês, *pub*). Varias palestrantes fazem palestras relâmpago - 20 slides, 15 segundos por slide, trocando de slide automaticamente – e a audiência grita, aplaude, bate palma, toca o terror de acordo. A ganhadora recebe um brinde e todo mundo se diverte.
 
-A few years ago I was invited to speak at a PubConf event in London. I like the challenge of a constrained talk. This one had to be drunk-people funny and Ignite-shaped. I had been thinking about Robert C. Martin’s [SOLID principles](https://www.baeldung.com/solid-principles), and in the spirit of “it depends” I thought it would be fun to see whether I could refute each principle with a straight face. I also wanted to propose an alternative in each case.
+Alguns anos atrás fui convidado para falar numa edição da PubConf de Londres. Gosto do desafio de uma palestra com restrições. Esta especificamente tinha as restrições do formato relâmpago e das pessaos bêbadas fazendo graça. Eu tenho refletido sobre os [princípios de SOLID](https://www.baeldung.com/solid-principles) do Robert C. Martin e o espírito "tudo depende" inerente aos princípios e achei que seria legal tentar refutar cada princípio de cara limpa. Eu também propus uma alternativa para cada caso.
 
-Now some talks write themselves: I figured I could use one slide to introduce each principle, one to challenge it, one to pitch an alternative, five times. That’s 15 slides, with 45 seconds per principle. Top-and-tail it, and there were my 20 slides!
+Algumas palestras se escrevem por si só: Percebi que poderia usar um slide para cada princípio, 1 slide para desafiar tal princípio, um para tentar vender minha alternativa. Cinco vezes. Ou seja, terias 15 slides, com 45 segundos para cada princípio. Uma introdução, uma conclusão, e aí tenho meus 20 slides!
 
-As I wrote the talk I noticed two things. First, it was much easier to refute each principle than I thought (apart from Liskov’s Substitution Principle, so I had to tackle that a different way). Second, the alternative kept turning out to be the same thing: Write simple code. It is easy to challenge that with “What does ‘simple’ even mean?” but I had a good working definition for that so I wasn’t too worried.
+Enquanto eu escrevia a palestra eu percebi duas coisas. A primeira é que é muito mais fácil refutar cada princípio do que eu tinha imaginado (exceto pelo Princípio da Substituição de Liskov, que eu precisei abordar de maneira distinta). A segunda coisa que percebi foi que a alternativa sempre se resumia em: *Escreva código simples*. É fácil desafiar essa alternativa com "Mas o que afinal é 'simples'?? mas eu tinha uma definição aceitável para isso então não estava muito preocupado.
 
-After the conference I put [the slides up on SpeakerDeck](https://speakerdeck.com/tastapod/why-every-element-of-solid-is-wrong) and a whole load of people I have never met started attacking first the premise of the talk, then the detail of slides from a talk they never heard me give, then [me personally](https://www.entropywins.wtf/blog/2017/02/17/why-every-single-argument-of-dan-north-is-wrong/).
+Depois da conferência eu coloquei meus [slides no SpeakerDeck](https://speakerdeck.com/tastapod/why-every-element-of-solid-is-wrong) e um mar de pessoas que eu não conheço começaram em primeiro lugar a atar a premissa da palestra, e então atacaram os slides de uma palestra que eles nunca me viram ministrar, e finalmente começaram a [me atacar pessoalmente](https://www.entropywins.wtf/blog/2017/02/17/why-every-single-argument-of-dan-north-is-wrong/).
 
-Since I’ve never written it up, here is roughly how the talk went. Bear in mind that for each principle, I had 15 seconds to introduce it, 15 seconds to challenge it, and 15 seconds to propose an alternative. Ready? Go!
+Como eu nunca de fato escrevi a palestra, este texto descreve aproximadamente como foi a palestra. Tenha em consideração que tive 15 segundos para introduzir o princípio, 15 segundos para desafiá-lo e 15 segundos para propôr uma alternativa. Preparada? Bora!
 
-
-
-### Single Responsibility Principle
+### Princípio da Responsabilidade Única (Single Responsibility Principle)
 
 The Single Responsibility Principle says that code should only do one thing. Another framing is that it should have “one reason to change”. I called this the “Pointlessly Vague Principle”. What is one thing anyway? Is ETL – Extract-Transform-Load – one thing (a `DataProcessor`) or three things? Any non-trivial code can have any number of reasons to change, which may or may not include the one you had in mind, so again this doesn’t make much sense to me.
 
